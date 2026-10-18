@@ -1,0 +1,5 @@
+linkage,first_merge_height,final_merge_height,n_single_step_merges,ari,nmi
+single,1.4167,3.6887,0,0.0296,0.3437
+complete,1.4167,6.613,0,0.4484,0.6641
+average,1.4167,4.7165,0,0.4484,0.6641
+ward,1.4167,8.1864,0,0.4484,0.6641

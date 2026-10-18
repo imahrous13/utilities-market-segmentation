@@ -1,0 +1,10 @@
+# Runtime dependencies are declared in pyproject.toml, which is the single source of
+# truth. This file exists only because some tools and reviewers look for a
+# requirements.txt. It installs the package itself, so the resolved set is identical.
+#
+#     pip install -r requirements.txt
+#
+# Two upper bounds in pyproject.toml are load-bearing, not stylistic:
+#   numpy      < 2   scikit-learn-extra 0.3.0 is compiled against the NumPy 1.x C API
+#   matplotlib < 3.9 matplotlib.cm.get_cmap was removed in 3.9
+-e .

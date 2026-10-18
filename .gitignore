@@ -1,0 +1,53 @@
+# Virtual environments
+myenv/
+.venv/
+venv/
+env/
+
+# Upstream source clone (scikit-learn-extra is a PyPI dependency, not project code)
+scikit-learn-extra/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+
+# Jupyter
+.ipynb_checkpoints/
+profile_default/
+.ipynb_profile/
+
+# Testing / linting caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# CI scratch output
+ci-outputs/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Secrets
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+
+# Internal working notes. Kept on disk, never published: it contains editorial
+# judgement, unresolved questions and criticism of the original submission.
+AI_NOTES.md

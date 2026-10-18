@@ -1,0 +1,23 @@
+company,cluster,cluster_name,medoid,is_medoid,distance_to_medoid,silhouette
+Arizona,0,Cluster A,Arizona,True,0.0,0.2131
+Boston,3,Cluster D,New England,False,2.489813,-0.067346
+Central,4,Cluster E,Southern,False,2.788056,0.24519
+Commonwealth,1,Cluster B,Madison,False,1.526524,0.364254
+NY,3,Cluster D,New England,False,3.688671,0.015164
+Florida,4,Cluster E,Southern,False,2.921102,0.1192
+Hawaiian,3,Cluster D,New England,False,1.699112,0.00433
+Idaho,0,Cluster A,Arizona,False,2.801825,-0.214418
+Kentucky,4,Cluster E,Southern,False,2.485683,0.147118
+Madison,1,Cluster B,Madison,True,0.0,0.516512
+Nevada,2,Cluster C,Nevada,True,0.0,0.108108
+New England,3,Cluster D,New England,True,0.0,0.233064
+Northern,1,Cluster B,Madison,False,1.440143,0.488509
+Oklahoma,0,Cluster A,Arizona,False,2.163226,0.039888
+Pacific,3,Cluster D,New England,False,2.383636,0.192221
+Puget,2,Cluster C,Nevada,False,3.510678,0.146487
+San Diego,3,Cluster D,New England,False,3.579861,0.209071
+Southern,4,Cluster E,Southern,True,0.0,-0.067939
+Texas,0,Cluster A,Arizona,False,2.467158,-0.001515
+Wisconsin,1,Cluster B,Madison,False,2.102738,0.350452
+United,3,Cluster D,New England,False,1.416696,0.37674
+Virginia,0,Cluster A,Arizona,False,2.568337,-0.206533

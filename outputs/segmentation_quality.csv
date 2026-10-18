@@ -1,0 +1,6 @@
+,n,mean_silhouette,min_silhouette,members_below_zero,mean_distance_to_medoid
+cluster_0,5,-0.0339,-0.2144,3,2.0001
+cluster_1,4,0.4299,0.3505,0,1.2674
+cluster_2,2,0.1273,0.1081,0,1.7553
+cluster_3,7,0.1376,-0.0673,1,2.1797
+cluster_4,4,0.1109,-0.0679,1,2.0487

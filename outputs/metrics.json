@@ -1,0 +1,440 @@
+{
+  "meta": {
+    "seed": 0,
+    "k_selected": 5,
+    "k_sensitivity": 6,
+    "features": [
+      "fixed_charge",
+      "ror",
+      "cost",
+      "load_factor",
+      "demand_growth",
+      "sales",
+      "nuclear",
+      "fuel_cost"
+    ],
+    "n_observations": 22
+  },
+  "cleaning": {
+    "columns_renamed": true,
+    "id_whitespace_stripped": true,
+    "rows_before": 22,
+    "null_rows_dropped": 0,
+    "duplicate_rows_dropped": 0,
+    "rows_after": 22
+  },
+  "quality": {
+    "n_observations": 22,
+    "n_features": 8,
+    "shape": [
+      22,
+      8
+    ],
+    "null_cells": 0,
+    "duplicate_rows": 0,
+    "describe": {
+      "fixed_charge": {
+        "mean": 1.114090909090909,
+        "std": 0.18451117119126498,
+        "min": 0.75,
+        "q25": 1.0425,
+        "median": 1.11,
+        "q75": 1.19,
+        "max": 1.49
+      },
+      "ror": {
+        "mean": 10.736363636363636,
+        "std": 2.2440493701693764,
+        "min": 6.4,
+        "q25": 9.2,
+        "median": 11.05,
+        "q75": 12.35,
+        "max": 15.4
+      },
+      "cost": {
+        "mean": 168.1818181818182,
+        "std": 41.19134948902831,
+        "min": 96.0,
+        "q25": 148.5,
+        "median": 170.5,
+        "q75": 195.75,
+        "max": 252.0
+      },
+      "load_factor": {
+        "mean": 56.97727272727273,
+        "std": 4.461147814950746,
+        "min": 49.8,
+        "q25": 53.775000000000006,
+        "median": 56.35,
+        "q75": 60.3,
+        "max": 67.6
+      },
+      "demand_growth": {
+        "mean": 3.2409090909090916,
+        "std": 3.1182502863761346,
+        "min": -2.2,
+        "q25": 1.45,
+        "median": 3.0,
+        "q75": 5.3500000000000005,
+        "max": 9.2
+      },
+      "sales": {
+        "mean": 8914.045454545454,
+        "std": 3549.9840305109988,
+        "min": 3300.0,
+        "q25": 6458.25,
+        "median": 8024.0,
+        "q75": 10128.25,
+        "max": 17441.0
+      },
+      "nuclear": {
+        "mean": 12.0,
+        "std": 16.791919825575974,
+        "min": 0.0,
+        "q25": 0.0,
+        "median": 0.0,
+        "q75": 24.6,
+        "max": 50.2
+      },
+      "fuel_cost": {
+        "mean": 1.1027272727272728,
+        "std": 0.5560980713283089,
+        "min": 0.309,
+        "q25": 0.63,
+        "median": 0.96,
+        "q75": 1.5162499999999999,
+        "max": 2.116
+      }
+    },
+    "raw_squared_distance_share_pct": {
+      "fixed_charge": 2.700991037882869e-07,
+      "ror": 3.995237733703312e-05,
+      "cost": 0.013461388325040067,
+      "load_factor": 0.00015789596748876067,
+      "demand_growth": 7.714357370333675e-05,
+      "sales": 99.9840238316367,
+      "nuclear": 0.0022370645515444056,
+      "fuel_cost": 2.4534690834560943e-06
+    },
+    "constant_features": [],
+    "zero_inflation": {
+      "nuclear": 12
+    }
+  },
+  "k_recommendation": {
+    "votes": {
+      "silhouette": 5,
+      "calinski_harabasz": 5,
+      "davies_bouldin": 8
+    },
+    "tally": {
+      "5": 2,
+      "8": 1
+    },
+    "recommended": 5,
+    "silhouette_at_recommended": 0.14598450827748213
+  },
+  "primary": {
+    "method": "kmedoids(k=5)",
+    "names": [
+      "Arizona",
+      "Madison",
+      "Nevada",
+      "New England",
+      "Southern"
+    ],
+    "sizes": [
+      5,
+      4,
+      2,
+      7,
+      4
+    ],
+    "members": {
+      "Arizona": [
+        "Arizona",
+        "Idaho",
+        "Oklahoma",
+        "Texas",
+        "Virginia"
+      ],
+      "Madison": [
+        "Commonwealth",
+        "Madison",
+        "Northern",
+        "Wisconsin"
+      ],
+      "Nevada": [
+        "Nevada",
+        "Puget"
+      ],
+      "New England": [
+        "Boston",
+        "Hawaiian",
+        "NY",
+        "New England",
+        "Pacific",
+        "San Diego",
+        "United"
+      ],
+      "Southern": [
+        "Central",
+        "Florida",
+        "Kentucky",
+        "Southern"
+      ]
+    },
+    "fit": {
+      "total": 112.04496709087753,
+      "per_cluster": {
+        "0": 25.212992507508474,
+        "1": 8.825794818833824,
+        "2": 12.32486128742662,
+        "3": 43.196604770578034,
+        "4": 22.48471370653059
+      },
+      "mean_per_cluster": 22.408993418175505
+    },
+    "separation": {
+      "silhouette": 0.14598450827748213,
+      "calinski_harabasz": 4.762648147504628,
+      "davies_bouldin": 1.415387450750495,
+      "points_below_zero": 5,
+      "share_below_zero": 0.22727272727272727
+    }
+  },
+  "sensitivity": {
+    "method": "kmedoids(k=6)",
+    "names": [
+      "Arizona",
+      "Commonwealth",
+      "Nevada",
+      "New England",
+      "Southern",
+      "Wisconsin"
+    ],
+    "sizes": [
+      5,
+      3,
+      2,
+      6,
+      4,
+      2
+    ],
+    "fit": {
+      "total": 109.45046656116467,
+      "per_cluster": {
+        "0": 25.212992507508474,
+        "1": 7.237130890499214,
+        "2": 12.32486128742662,
+        "3": 36.99743496886164,
+        "4": 22.48471370653059,
+        "5": 5.193333200338142
+      },
+      "mean_per_cluster": 18.24174442686078
+    },
+    "agreement_with_primary": [
+      {
+        "k": 2,
+        "is_reference": false,
+        "ari": 0.12167300380228137,
+        "nmi": 0.27510288742753153
+      },
+      {
+        "k": 3,
+        "is_reference": false,
+        "ari": 0.19273301737756715,
+        "nmi": 0.4198130885340545
+      },
+      {
+        "k": 4,
+        "is_reference": false,
+        "ari": 0.4225,
+        "nmi": 0.652516878903677
+      },
+      {
+        "k": 5,
+        "is_reference": true,
+        "ari": 1.0,
+        "nmi": 1.0
+      },
+      {
+        "k": 6,
+        "is_reference": false,
+        "ari": 0.8189655172413793,
+        "nmi": 0.8942894536772479
+      },
+      {
+        "k": 7,
+        "is_reference": false,
+        "ari": 0.7626224566691786,
+        "nmi": 0.8720139026743013
+      },
+      {
+        "k": 8,
+        "is_reference": false,
+        "ari": 0.7442922374429224,
+        "nmi": 0.8560785718141166
+      }
+    ]
+  },
+  "linkages": [
+    {
+      "linkage": "single",
+      "first_merge_height": 1.4166958420821458,
+      "final_merge_height": 3.6886714305884545,
+      "n_single_step_merges": 0,
+      "ari": 0.029574861367837338,
+      "nmi": 0.34370369034924275
+    },
+    {
+      "linkage": "complete",
+      "first_merge_height": 1.4166958420821458,
+      "final_merge_height": 6.613029854044415,
+      "n_single_step_merges": 0,
+      "ari": 0.4484304932735426,
+      "nmi": 0.6640626449224826
+    },
+    {
+      "linkage": "average",
+      "first_merge_height": 1.4166958420821458,
+      "final_merge_height": 4.716535434252163,
+      "n_single_step_merges": 0,
+      "ari": 0.4484304932735426,
+      "nmi": 0.6640626449224826
+    },
+    {
+      "linkage": "ward",
+      "first_merge_height": 1.4166958420821458,
+      "final_merge_height": 8.186429395084504,
+      "n_single_step_merges": 0,
+      "ari": 0.4484304932735426,
+      "nmi": 0.6640626449224826
+    }
+  ],
+  "segmentation_quality": {
+    "cluster_0": {
+      "n": 5,
+      "mean_silhouette": -0.0339,
+      "min_silhouette": -0.2144,
+      "members_below_zero": 3,
+      "mean_distance_to_medoid": 2.0001
+    },
+    "cluster_1": {
+      "n": 4,
+      "mean_silhouette": 0.4299,
+      "min_silhouette": 0.3505,
+      "members_below_zero": 0,
+      "mean_distance_to_medoid": 1.2674
+    },
+    "cluster_2": {
+      "n": 2,
+      "mean_silhouette": 0.1273,
+      "min_silhouette": 0.1081,
+      "members_below_zero": 0,
+      "mean_distance_to_medoid": 1.7553
+    },
+    "cluster_3": {
+      "n": 7,
+      "mean_silhouette": 0.1376,
+      "min_silhouette": -0.0673,
+      "members_below_zero": 1,
+      "mean_distance_to_medoid": 2.1797
+    },
+    "cluster_4": {
+      "n": 4,
+      "mean_silhouette": 0.1109,
+      "min_silhouette": -0.0679,
+      "members_below_zero": 1,
+      "mean_distance_to_medoid": 2.0487
+    }
+  },
+  "cross_linkage_agreement": {
+    "complete vs average": {
+      "ari": 1.0,
+      "nmi": 1.0
+    },
+    "complete vs ward": {
+      "ari": 1.0,
+      "nmi": 1.0
+    }
+  },
+  "seed_sensitivity": {
+    "k": 5,
+    "reference_seed": 0,
+    "seeds_tested": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "min_ari": 1.0,
+    "mean_ari": 1.0,
+    "seed_independent": true
+  },
+  "subsample_stability": [
+    {
+      "subsample_size": 16,
+      "repeats": 200,
+      "mean_ari": 0.5322606954718723,
+      "median_ari": 0.5502645502645502,
+      "min_ari": 0.02972027972027972,
+      "share_ari_above_0_5": 0.57
+    },
+    {
+      "subsample_size": 18,
+      "repeats": 200,
+      "mean_ari": 0.6150000208585273,
+      "median_ari": 0.6218487394957983,
+      "min_ari": 0.10079341757272994,
+      "share_ari_above_0_5": 0.71
+    },
+    {
+      "subsample_size": 20,
+      "repeats": 200,
+      "mean_ari": 0.6930002825232271,
+      "median_ari": 0.7508305647840532,
+      "min_ari": 0.1694915254237288,
+      "share_ari_above_0_5": 0.745
+    }
+  ],
+  "kmeans_contrast": {
+    "ari_vs_kmedoids": 0.5508021390374331,
+    "min_distance_point_to_own_centroid": 1.553181732376171,
+    "centroid_is_observation": false,
+    "kmeans_seed_min_ari": 0.6427221172022685
+  },
+  "pca": {
+    "explained_variance_ratio": [
+      0.27161831187395596,
+      0.2375334045879463
+    ],
+    "cumulative_explained_variance": 0.5091517164619023,
+    "loadings": {
+      "fixed_charge": [
+        0.44554526280813944,
+        0.571190209186263,
+        -0.3486905358689982,
+        -0.2889011571895229,
+        -0.355361000111189,
+        0.053833429805143086,
+        0.16797022778465992,
+        -0.33584031816070714
+      ],
+      "ror": [
+        -0.23217668654771817,
+        -0.10053490069527583,
+        0.16130192414014066,
+        -0.40918418796919603,
+        0.2829326973540937,
+        0.6030948670281415,
+        -0.08536118220130413,
+        -0.5398850324430498
+      ]
+    }
+  }
+}

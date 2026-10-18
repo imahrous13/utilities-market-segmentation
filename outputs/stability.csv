@@ -1,0 +1,4 @@
+subsample_size,repeats,mean_ari,median_ari,min_ari,share_ari_above_0_5
+16,200,0.5323,0.5503,0.0297,0.57
+18,200,0.615,0.6218,0.1008,0.71
+20,200,0.693,0.7508,0.1695,0.745

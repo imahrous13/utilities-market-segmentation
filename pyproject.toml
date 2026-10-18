@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "utilities-clustering"
+version = "1.0.0"
+description = "Unsupervised segmentation of utility companies with hierarchical clustering and K-Medoids."
+readme = "README.md"
+requires-python = ">=3.11"
+keywords = ["clustering", "k-medoids", "hierarchical-clustering", "segmentation", "data-mining"]
+classifiers = [
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+# Two upper bounds are load-bearing rather than stylistic:
+#   numpy      < 2  - scikit-learn-extra 0.3.0 ships Cython extensions compiled against
+#                      the NumPy 1.x C API; importing sklearn_extra under NumPy >= 2
+#                      raises "numpy.dtype size changed".
+#   matplotlib < 3.9 - matplotlib.cm.get_cmap was deprecated in 3.7 and removed in 3.9.
+dependencies = [
+    "numpy<2",
+    "matplotlib<3.9",
+    "pandas",
+    "scipy",
+    "scikit-learn",
+    "scikit-learn-extra",
+    # scikit-learn-extra 0.3.0 does `from distutils.version import LooseVersion` at import
+    # time, and distutils was removed from the standard library in Python 3.12 (PEP 632).
+    # Without setuptools installed to supply the shim, `from sklearn_extra.cluster import
+    # KMedoids` fails on 3.12+ with ModuleNotFoundError: No module named 'distutils'.
+    # Drop this marker only after scikit-learn-extra stops importing distutils.
+    "setuptools>=68; python_version >= '3.12'",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7", "pytest-cov", "ruff"]
+notebook = ["jupyter", "ipykernel"]
+
+[project.scripts]
+utilities-segment = "utilities_clustering.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"
+filterwarnings = [
+    # scikit-learn-extra 0.3.0 calls distutils.version.LooseVersion, which setuptools
+    # deprecates on Python 3.12+. It is a third-party version comparison, not our code,
+    # and there is no fix available from our side.
+    "ignore:distutils Version classes are deprecated:DeprecationWarning",
+    "ignore::DeprecationWarning:matplotlib",
+    "ignore::DeprecationWarning:pyparsing",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+ignore = ["B905"]
+
+[tool.ruff.lint.per-file-ignores]
+# This file embeds the notebook's prose and code as string literals. Long lines there are
+# notebook formatting, not Python style, and wrapping them would distort what the notebook
+# actually renders.
+"scripts/build_notebook.py" = ["E501"]

@@ -1,0 +1,5 @@
+# Development and CI dependencies. The dev extras are declared in pyproject.toml; this
+# file installs the package together with them so one command is enough.
+#
+#     pip install -r requirements-dev.txt
+-e ".[dev,notebook]"
